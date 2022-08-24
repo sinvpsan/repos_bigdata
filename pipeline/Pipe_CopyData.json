@@ -1,0 +1,9 @@
+{
+	"name": "Pipe_CopyData",
+	"properties": {
+		"folder": {
+			"name": "Pipelines"
+		},
+		"annotations": []
+	}
+}
