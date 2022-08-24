@@ -11,6 +11,9 @@
 		"LSsqlserverAzure_connectionString": {
 			"value": ""
 		},
+		"LS_SQL_OnPremisses_connectionString": {
+			"value": ""
+		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
