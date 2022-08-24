@@ -11,11 +11,15 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_DataLake'"
 		},
+		"LSsqlserverAzure_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSsqlserverAzure'"
+		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
-		"LS_KEYVAULT_properties_typeProperties_baseUrl": {
+		"LS_KeyBigData_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://keybigdatasinvpsan.vault.azure.net/"
 		}
@@ -42,25 +46,38 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_KEYVAULT')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('LS_KEYVAULT_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/IRSINVALPEREIRAXPS')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LSsqlserverAzure')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('LSsqlserverAzure_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_KeyBigData')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('LS_KeyBigData_properties_typeProperties_baseUrl')]"
+				}
 			},
 			"dependsOn": []
 		}

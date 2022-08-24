@@ -8,10 +8,13 @@
 		"LS_DataLake_accountKey": {
 			"value": ""
 		},
+		"LSsqlserverAzure_connectionString": {
+			"value": ""
+		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
-		"LS_KEYVAULT_properties_typeProperties_baseUrl": {
+		"LS_KeyBigData_properties_typeProperties_baseUrl": {
 			"value": "https://keybigdatasinvpsan.vault.azure.net/"
 		},
 		"containerUri": {
