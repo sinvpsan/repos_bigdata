@@ -1,0 +1,16 @@
+{
+	"name": "LS_SQL_OnPremisses",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=SINVAL_XPS\\SQL2019;initial catalog=AdventureWorks2019;user id=sinvpsan",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMmY5MGVlNC0xMTM2LTQzZWMtYTAwOC1iNTk0YmM1OTNhZDEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRSINVALPEREIRAXPS",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
