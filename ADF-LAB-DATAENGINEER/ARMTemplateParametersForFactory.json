@@ -8,10 +8,10 @@
 		"LS_DataLake_accountKey": {
 			"value": ""
 		},
-		"LSsqlserverAzure_connectionString": {
+		"LS_SQL_OnPremisses_connectionString": {
 			"value": ""
 		},
-		"LS_SQL_OnPremisses_connectionString": {
+		"LSsqlserverAzure_connectionString": {
 			"value": ""
 		},
 		"LS_DataLake_properties_typeProperties_url": {
