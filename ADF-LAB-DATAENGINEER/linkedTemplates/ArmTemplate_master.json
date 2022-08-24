@@ -19,13 +19,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LSsqlserverAzure'"
 		},
+		"Key_General_Azure_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://keyGeneralAzure.vault.azure.net/"
+		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-		},
-		"LS_KeyBigData_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://keybigdatasinvpsan.vault.azure.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -63,11 +63,11 @@
 					"LS_SQL_OnPremisses_connectionString": {
 						"value": "[parameters('LS_SQL_OnPremisses_connectionString')]"
 					},
+					"Key_General_Azure_properties_typeProperties_baseUrl": {
+						"value": "[parameters('Key_General_Azure_properties_typeProperties_baseUrl')]"
+					},
 					"LS_DataLake_properties_typeProperties_url": {
 						"value": "[parameters('LS_DataLake_properties_typeProperties_url')]"
-					},
-					"LS_KeyBigData_properties_typeProperties_baseUrl": {
-						"value": "[parameters('LS_KeyBigData_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

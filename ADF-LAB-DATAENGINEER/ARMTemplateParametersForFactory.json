@@ -14,11 +14,11 @@
 		"LSsqlserverAzure_connectionString": {
 			"value": ""
 		},
+		"Key_General_Azure_properties_typeProperties_baseUrl": {
+			"value": "https://keyGeneralAzure.vault.azure.net/"
+		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-		},
-		"LS_KeyBigData_properties_typeProperties_baseUrl": {
-			"value": "https://keybigdatasinvpsan.vault.azure.net/"
 		}
 	}
 }
