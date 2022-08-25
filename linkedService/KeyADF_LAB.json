@@ -1,0 +1,10 @@
+{
+	"name": "KeyADF_LAB",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://key-Labs.vault.azure.net/"
+		}
+	}
+}
