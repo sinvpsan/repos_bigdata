@@ -1,0 +1,9 @@
+{
+	"name": "ADF-LAB-SINVPSAN",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e1c8aee2-56dd-458a-a37c-c095f2e7f594",
+		"tenantId": "08d86bfe-c7ec-4498-9327-3bfcdfeb76e9"
+	}
+}
