@@ -11,10 +11,6 @@
 			"type": "string",
 			"defaultValue": "https://Key-Lab-Sinvpsan.vault.azure.net/"
 		},
-		"LS_DATALAKE_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-		},
 		"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "secret-db-azure"
@@ -22,6 +18,10 @@
 		"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "secret-db-local"
+		},
+		"LS_DATALAKE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -53,14 +53,14 @@
 					"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
 						"value": "[parameters('KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl')]"
 					},
-					"LS_DATALAKE_properties_typeProperties_url": {
-						"value": "[parameters('LS_DATALAKE_properties_typeProperties_url')]"
-					},
 					"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_SQL_AZURE_properties_typeProperties_connectionString_secretName')]"
 					},
 					"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName')]"
+					},
+					"LS_DATALAKE_properties_typeProperties_url": {
+						"value": "[parameters('LS_DATALAKE_properties_typeProperties_url')]"
 					}
 				}
 			},

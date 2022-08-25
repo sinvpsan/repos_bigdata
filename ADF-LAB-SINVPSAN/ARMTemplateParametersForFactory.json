@@ -8,14 +8,14 @@
 		"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
 			"value": "https://Key-Lab-Sinvpsan.vault.azure.net/"
 		},
-		"LS_DATALAKE_properties_typeProperties_url": {
-			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-		},
 		"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
 			"value": "secret-db-azure"
 		},
 		"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
 			"value": "secret-db-local"
+		},
+		"LS_DATALAKE_properties_typeProperties_url": {
+			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		}
 	}
 }
