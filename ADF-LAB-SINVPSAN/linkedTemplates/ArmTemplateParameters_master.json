@@ -8,6 +8,9 @@
 		"LS_DATALAKE_accountKey": {
 			"value": ""
 		},
+		"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
+			"value": "https://Key-Lab-Sinvpsan.vault.azure.net/"
+		},
 		"LS_DATALAKE_properties_typeProperties_url": {
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
