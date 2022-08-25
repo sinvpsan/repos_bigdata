@@ -7,6 +7,10 @@
 		"typeProperties": {
 			"url": "https://labbigdatesinvpsan.dfs.core.windows.net/",
 			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEQ1QTAyNjZELUY3RUItNDRGQS04OEE5LTM1NkRGOENDMkVGNF8yOWYxN2RjNi1kYjc0LTRiYjAtYmIxYy0xNjcyNzI5NzllY2YiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
