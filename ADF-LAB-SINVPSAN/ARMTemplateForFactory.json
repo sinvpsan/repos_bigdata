@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-LAB-SINVPSAN"
 		},
-		"LS_DATALAKE_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_DATALAKE'"
-		},
 		"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://Key-Lab-Sinvpsan.vault.azure.net/"
@@ -18,6 +14,14 @@
 		"LS_DATALAKE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
+		},
+		"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secret-db-azure"
+		},
+		"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secret-db-local"
 		}
 	},
 	"variables": {
@@ -47,12 +51,18 @@
 				"typeProperties": {
 					"url": "[parameters('LS_DATALAKE_properties_typeProperties_url')]",
 					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_DATALAKE_accountKey')]"
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "KEY_LAB_SINVPSAN",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "secret-key-datalake"
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/KEY_LAB_SINVPSAN')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/IR-ACCESS-ONPREMISSES')]",
@@ -63,6 +73,55 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_AZURE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "KEY_LAB_SINVPSAN",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('LS_SQL_AZURE_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/KEY_LAB_SINVPSAN')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_ONPREMISSES')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SqlServer",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "KEY_LAB_SINVPSAN",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "IR-ACCESS-ONPREMISSES",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/IR-ACCESS-ONPREMISSES')]",
+				"[concat(variables('factoryId'), '/linkedServices/KEY_LAB_SINVPSAN')]"
+			]
 		}
 	]
 }
