@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://Key-ADF.vault.azure.net/"
+			"baseUrl": "https://Key-Lab-ADF.vault.azure.net/"
 		}
 	}
 }
