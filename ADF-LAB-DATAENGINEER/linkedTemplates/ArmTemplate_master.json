@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
+		"Key_ADF_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://Key-ADF.vault.azure.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +65,9 @@
 					},
 					"LS_DataLake_properties_typeProperties_url": {
 						"value": "[parameters('LS_DataLake_properties_typeProperties_url')]"
+					},
+					"Key_ADF_properties_typeProperties_baseUrl": {
+						"value": "[parameters('Key_ADF_properties_typeProperties_baseUrl')]"
 					}
 				}
 			},

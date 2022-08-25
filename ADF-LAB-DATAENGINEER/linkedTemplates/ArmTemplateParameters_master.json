@@ -17,6 +17,9 @@
 		"LS_DataLake_properties_typeProperties_url": {
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
+		"Key_ADF_properties_typeProperties_baseUrl": {
+			"value": "https://Key-ADF.vault.azure.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},
