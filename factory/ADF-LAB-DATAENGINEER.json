@@ -1,9 +1,0 @@
-{
-	"name": "ADF-LAB-DATAENGINEER",
-	"location": "eastus2",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "62914082-a44a-4034-9a55-f2aa209d83cb",
-		"tenantId": "08d86bfe-c7ec-4498-9327-3bfcdfeb76e9"
-	}
-}
