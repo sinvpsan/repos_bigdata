@@ -1,0 +1,10 @@
+{
+	"name": "KEY_LAB_SINVPSAN",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://Key-Lab-Sinvpsan.vault.azure.net/"
+		}
+	}
+}
