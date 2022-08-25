@@ -1,8 +1,0 @@
-{
-	"name": "LS_DATALAKE",
-	"properties": {
-		"annotations": [],
-		"type": "AzureBlobFS",
-		"typeProperties": {
-			"url": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-}
