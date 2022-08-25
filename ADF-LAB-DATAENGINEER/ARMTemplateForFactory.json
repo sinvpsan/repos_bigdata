@@ -19,17 +19,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LSsqlserverAzure'"
 		},
-		"Key_General_Azure_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://keyGeneralAzure.vault.azure.net/"
-		},
 		"LS_DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
-		},
-		"Key_ADF_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://keybigdatasinvpsan.vault.azure.net/"
 		}
 	},
 	"variables": {
@@ -207,19 +199,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Key_General_Azure')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('Key_General_Azure_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/LS_DataLake')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -275,19 +254,6 @@
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Key_ADF')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('Key_ADF_properties_typeProperties_baseUrl')]"
-				}
 			},
 			"dependsOn": []
 		}
