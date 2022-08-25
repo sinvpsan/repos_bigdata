@@ -18,7 +18,7 @@
 			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
 		},
 		"Key_ADF_properties_typeProperties_baseUrl": {
-			"value": "https://Key-ADF.vault.azure.net/"
+			"value": "https://Key-Lab-ADF.vault.azure.net/"
 		}
 	}
 }

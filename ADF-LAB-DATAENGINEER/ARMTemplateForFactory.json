@@ -25,7 +25,7 @@
 		},
 		"Key_ADF_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://Key-ADF.vault.azure.net/"
+			"defaultValue": "https://Key-Lab-ADF.vault.azure.net/"
 		}
 	},
 	"variables": {
