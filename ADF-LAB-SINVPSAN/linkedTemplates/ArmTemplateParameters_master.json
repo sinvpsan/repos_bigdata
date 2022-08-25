@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-LAB-SINVPSAN"
+		},
+		"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
+			"value": "https://Key-Lab-Sinvpsan.vault.azure.net/"
+		},
+		"LS_DATALAKE_properties_typeProperties_url": {
+			"value": "https://labbigdatesinvpsan.dfs.core.windows.net/"
+		},
+		"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
+			"value": "secret-db-azure"
+		},
+		"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
+			"value": "secret-db-local"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

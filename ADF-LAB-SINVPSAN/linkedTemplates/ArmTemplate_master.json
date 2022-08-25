@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-LAB-SINVPSAN"
+		},
+		"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://Key-Lab-Sinvpsan.vault.azure.net/"
+		},
+		"LS_DATALAKE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://labbigdatesinvpsan.dfs.core.windows.net/"
+		},
+		"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secret-db-azure"
+		},
+		"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "secret-db-local"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-LAB-SINVPSAN_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl": {
+						"value": "[parameters('KEY_LAB_SINVPSAN_properties_typeProperties_baseUrl')]"
+					},
+					"LS_DATALAKE_properties_typeProperties_url": {
+						"value": "[parameters('LS_DATALAKE_properties_typeProperties_url')]"
+					},
+					"LS_SQL_AZURE_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_SQL_AZURE_properties_typeProperties_connectionString_secretName')]"
+					},
+					"LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_SQL_ONPREMISSES_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"name": "LS_SQL_ONPREMISSES",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "KEY_LAB_SINVPSAN",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secret-db-local"
+			}
+		},
+		"connectVia": {
+			"referenceName": "IR-ACCESS-ONPREMISSES",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
