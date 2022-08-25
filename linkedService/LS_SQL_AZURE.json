@@ -1,0 +1,17 @@
+{
+	"name": "LS_SQL_AZURE",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "KEY_LAB_SINVPSAN",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secret-db-azure"
+			}
+		}
+	}
+}
