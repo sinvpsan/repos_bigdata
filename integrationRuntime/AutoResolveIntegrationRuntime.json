@@ -17,7 +17,7 @@
 			}
 		},
 		"managedVirtualNetwork": {
-			"type": "ManagedVirtualNetworkReference",
+			"type": 0,
 			"referenceName": "default"
 		}
 	}
